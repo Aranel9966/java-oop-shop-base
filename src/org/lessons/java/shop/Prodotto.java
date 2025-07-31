@@ -5,14 +5,15 @@ import java.util.Random;
 public class Prodotto {
     private int codice;
     private String nome;
-    private String descrizione;
+    private String marca;
     private double prezzo;
     private int iva;
 
     // consturttore con parametro
-    Prodotto(int codice, String nome, String descrizione, double prezzo, int iva) {
-        this.codice = codice;
-        this.descrizione = descrizione;
+    public Prodotto(String nome, String marca, double prezzo, int iva) {
+        Random randomNumber = new Random();
+        this.codice = randomNumber.nextInt(50);
+        this.marca = marca;
         this.nome = nome;
         this.prezzo = prezzo;
         this.iva = iva;
@@ -23,8 +24,8 @@ public class Prodotto {
         return this.nome;
     }
 
-    public String getDescrizione() {
-        return this.descrizione;
+    public String getMarca() {
+        return this.marca;
     }
 
     public int getCodice() {
@@ -37,8 +38,7 @@ public class Prodotto {
     }
 
     public String getCodName() {
-        String codName = "codice competo prodotto: " + codice + "-" + nome;
-        return codName;
+        return String.format("codProdotto: %s-%s ", codice, nome);
     }
 
     public String getPrezzoIva() {
@@ -54,8 +54,8 @@ public class Prodotto {
         this.nome = nome;
     }
 
-    public void setDescrizione(String descrizione) {
-        this.descrizione = descrizione;
+    public void setMarca(String marca) {
+        this.marca = marca;
     }
 
     public void setPrezzo(double prezzo) {

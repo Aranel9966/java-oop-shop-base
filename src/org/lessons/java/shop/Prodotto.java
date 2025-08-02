@@ -3,8 +3,8 @@ package org.lessons.java.shop;
 import java.util.Random;
 
 public class Prodotto {
-    private int codice;
     private String nome;
+    private int codice;
     private String marca;
     private double prezzo;
     private int iva;
@@ -32,9 +32,8 @@ public class Prodotto {
         return this.codice;
     }
 
-    public String getPrezzo() {
-        String prezzoCompeto = "prezzo: " + prezzo + " euro";
-        return prezzoCompeto;
+    public double getPrezzo() {
+        return this.prezzo;
     }
 
     public String getCodName() {
@@ -66,4 +65,9 @@ public class Prodotto {
         this.iva = iva;
     }
 
+    @Override
+    public String toString() {
+        return String.format(" %s %s %.2f %d", this.getNome(), this.getMarca(),
+                this.getPrezzo(), this.getIva());
+    }
 }

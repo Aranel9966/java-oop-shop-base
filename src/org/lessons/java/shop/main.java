@@ -27,8 +27,10 @@ public class main {
         System.out.println(scarpa.getIva());
 
         Cuffie cuffieSm = new Cuffie("cuffieSm", "samsung", 123.0, 20, "nere", true);
-        System.out.println(String.format("prodotto: %s", cuffieSm.getCodName()));
+        System.out.println(String.format("prodotto: %s, %s", cuffieSm.getNome(), cuffieSm.getCodName()));
         Smartphone s25 = new Smartphone("s25", "samsung", 723.0, 20, "st342", 123);
-        System.out.println(String.format("prodotto: %s", s25.getCodName()));
+        System.out.println(String.format("prodotto: %s, %s", s25.getNome(), s25.getCodName()));
+        Televisori odisy = new Televisori("Odisy g5", "samsung", 323.0, 20, 37.5, false);
+        System.out.println(String.format("prodotto: %s, %s", odisy.getNome(), odisy.getCodName()));
     }
 }

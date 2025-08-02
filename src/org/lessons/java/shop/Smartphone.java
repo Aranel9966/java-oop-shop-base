@@ -28,4 +28,8 @@ public class Smartphone extends Prodotto {
         this.memoria = memoria;
     }
 
+    @Override
+    public String toString() {
+        return String.format("prodotto %s %s %d", super.toString(), this.getCodIMEI(), this.getMemoria());
+    }
 }

@@ -4,8 +4,9 @@ public class Televisori extends Prodotto {
     private double dimensione;
     private boolean smart;
 
-    public Televisori(String nome, String marca, double prezzo, int iva, double dimensione, boolean smart) {
-        super(nome, marca, prezzo, iva);
+    public Televisori(String nome, String marca, double prezzo, int iva, boolean tessera, double dimensione,
+            boolean smart) {
+        super(nome, marca, prezzo, iva, tessera);
         // TODO Auto-generated constructor stub
     }
 

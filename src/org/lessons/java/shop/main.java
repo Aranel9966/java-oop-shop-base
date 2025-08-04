@@ -8,7 +8,7 @@ public class main {
         // int id = 0;
         // Random randomNumber = new Random();
         // id = randomNumber.nextInt(50);
-        Prodotto scarpa = new Prodotto("Jordan", "scarpe belle", 70, 20);
+        Prodotto scarpa = new Prodotto("Jordan", "scarpe belle", 70, 20, true);
 
         System.out.println(scarpa.getNome());
         System.out.println(scarpa.getMarca());
@@ -26,11 +26,11 @@ public class main {
         scarpa.setIva(30);
         System.out.println(scarpa.getIva());
 
-        Cuffie cuffieSm = new Cuffie("cuffieSm", "samsung", 123.0, 20, "nere", true);
+        Cuffie cuffieSm = new Cuffie("cuffieSm", "samsung", 123.0, 20, true, "nere", true);
         System.out.println(String.format("prodotto: %s, %s", cuffieSm.getNome(), cuffieSm.getCodName()));
-        Smartphone s25 = new Smartphone("s25", "samsung", 723.0, 20, "st342", 123);
-        System.out.println(String.format("prodotto: %s, %s", s25.getNome(), s25.getCodName()));
-        Televisori odisy = new Televisori("Odisy g5", "samsung", 323.0, 20, 37.5, false);
-        System.out.println(String.format("prodotto: %s, %s", odisy.getNome(), odisy.getCodName()));
+        Smartphone s25 = new Smartphone("s25", "samsung", 723.0, 20, true, "st342", 123);
+        System.out.println(String.format("prodotto: %s, %s", true, s25.getNome(), s25.getCodName()));
+        Televisori odisy = new Televisori("Odisy g5", "samsung", 323.0, 20, true, 37.5, false);
+        System.out.println(String.format("prodotto: %s, %s", true, odisy.getNome(), odisy.getCodName()));
     }
 }

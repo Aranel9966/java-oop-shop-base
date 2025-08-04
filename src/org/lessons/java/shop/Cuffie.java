@@ -4,8 +4,8 @@ public class Cuffie extends Prodotto {
     private String colore;
     private boolean wireless;
 
-    public Cuffie(String nome, String marca, double prezzo, int iva, String colore, boolean wireless) {
-        super(nome, marca, prezzo, iva);
+    public Cuffie(String nome, String marca, double prezzo, int iva, boolean tessera, String colore, boolean wireless) {
+        super(nome, marca, prezzo, iva, tessera);
         // TODO Auto-generated constructor stub
         this.colore = colore;
         this.wireless = wireless;

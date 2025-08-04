@@ -8,15 +8,17 @@ public class Prodotto {
     private String marca;
     private double prezzo;
     private int iva;
+    private boolean tessera;
 
     // consturttore con parametro
-    public Prodotto(String nome, String marca, double prezzo, int iva) {
+    public Prodotto(String nome, String marca, double prezzo, int iva, boolean tessera) {
         Random randomNumber = new Random();
         this.codice = randomNumber.nextInt(50);
         this.marca = marca;
         this.nome = nome;
         this.prezzo = prezzo;
         this.iva = iva;
+        this.tessera = tessera;
 
     };
 
@@ -49,6 +51,10 @@ public class Prodotto {
         return iva;
     }
 
+    public boolean getTessera() {
+        return tessera;
+    }
+
     public void setNome(String nome) {
         this.nome = nome;
     }
@@ -65,9 +71,22 @@ public class Prodotto {
         this.iva = iva;
     }
 
+    public void setTessera(boolean tessera) {
+        this.tessera = tessera;
+    }
+
     @Override
     public String toString() {
         return String.format(" %s %s %.2f %d", this.getNome(), this.getMarca(),
                 this.getPrezzo(), this.getIva());
+    }
+
+    public double getSconto(double prezzo) {
+        if (this.tessera) {
+            return prezzo - (prezzo * 2 / 100);
+        } else {
+            return prezzo;
+        }
+
     }
 }

@@ -19,6 +19,7 @@ public class Carrello {
             String marca = null;
             Double prezzo = null;
             int iva = 0;
+            boolean tessera = true;
             if (input.equalsIgnoreCase("stop")) {
                 if (carrello.length == 0) {
                     System.out.println("il carrello é vuoto.");
@@ -42,6 +43,9 @@ public class Carrello {
                 System.out.println("Inserisci il iva");
                 iva = scan.nextInt();
                 scan.nextLine();
+                System.out.println("hai la tessera?");
+                tessera = scan.nextBoolean();
+                scan.nextLine();
             }
 
             // tel
@@ -56,7 +60,7 @@ public class Carrello {
                     System.out.println("Inserisci la memoria");
                     int memoria = scan.nextInt();
                     scan.nextLine();
-                    Smartphone telefono = new Smartphone(nome, marca, prezzo, iva, codIMEI, memoria);
+                    Smartphone telefono = new Smartphone(nome, marca, prezzo, iva, tessera, codIMEI, memoria);
                     // Smartphone s25 = new Smartphone("s25", "samsung", 723.0, 20, "st342", 123);
                     newCarrello[newCarrello.length - 1] = telefono;
                     carrello = newCarrello;

@@ -5,8 +5,8 @@ public class Smartphone extends Prodotto {
     private String codIMEI;
     private int memoria;
 
-    public Smartphone(String nome, String marca, double prezzo, int iva, String codIMEI, int memoria) {
-        super(nome, marca, prezzo, iva);
+    public Smartphone(String nome, String marca, double prezzo, int iva, boolean tessera, String codIMEI, int memoria) {
+        super(nome, marca, prezzo, iva, tessera);
         this.codIMEI = codIMEI;
         this.memoria = memoria;
         // TODO Auto-generated constructor stub
@@ -30,6 +30,17 @@ public class Smartphone extends Prodotto {
 
     @Override
     public String toString() {
-        return String.format("prodotto %s %s %d", super.toString(), this.getCodIMEI(), this.getMemoria());
+        return String.format("prodotto %s %s %d %.2f", super.toString(), this.getCodIMEI(), this.getMemoria(),
+                this.getSconto(getPrezzo()));
     }
+
+    @Override
+    public double getSconto(double prezzo) {
+        if (this.memoria < 32) {
+            return prezzo - (prezzo * 5 / 100);
+        } else {
+            return super.getSconto(prezzo);
+        }
+    }
+
 }
